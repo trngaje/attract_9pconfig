@@ -1,0 +1,13 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons
++Start DOSBox;+Start DOSBox;pc;;;;;;;;;;;;;;
++Start rpix86;+Start rpix86;pc;;;;;;;;;;;;;;
+PRINCE;페르시아 왕자1;pc;;;;;;;;;;;;;;
+dave;위험한 데이브;pc;;;;;;;;;;;;;;
+goindol2;고인돌2;pc;;;;;;;;;;;;;;
+skyroads;스카이로드;pc;;;;;;;;;;;;;;
+skyxmas;스카이로드-xmas;pc;;;;;;;;;;;;;;
+temim;요절복통기계;pc;;;;;;;;;;;;;;
+robocod2;쭉쭉이;pc;;;;;;;;;;;;;;
+pm2;프린세스메이커2;pc;;;;;;;;;;;;;;
+pm2edit;프메2-EDIT;pc;;;;;;;;;;;;;;
+night;어쩐지저녁;pc;;;;;;;;;;;;;;

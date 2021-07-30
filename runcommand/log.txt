@@ -1,0 +1,32 @@
+EMULATOR : megadrive
+ROM_FULL_PATH : /home/odroid/roms/megadrive/피구왕 통키K 팀무풍v0.1.gen
+ROM : 피구왕 통키K 팀무풍v0.1.gen
+ROM_FILENAME : 피구왕 통키K 팀무풍v0.1
+
+=== func_CoreSelectMenu==
+CFG LOAD : /home/odroid/runcommand/cfg/megadrive.cfg
+DEFAULT CORE : 32-picodrive_libretro.so
+GAME_CORE : 
+
+=== func_DefaultCoreSelect
+
+=== func_CoreSelectMenu==
+CFG LOAD : /home/odroid/runcommand/cfg/megadrive.cfg
+DEFAULT CORE : 32-picodrive_libretro.so
+GAME_CORE : 
+
+=== func_DefaultCoreSelect
+
+=== func_CoreSelectMenu==
+CFG LOAD : /home/odroid/runcommand/cfg/megadrive.cfg
+DEFAULT CORE : genesis_plus_gx_libretro.so
+GAME_CORE : 
+
+=== func_LaunchGame
+RUNCOMMAND : retroarch -L "/home/odroid/cores/genesis_plus_gx_libretro.so" "/home/odroid/roms/megadrive/피구왕 통키K 팀무풍v0.1.gen"
+
+=== runcommand_end
+- screenshot / records 옮기기
+FFMPEG FILE : ffmpeg -i /home/odroid/.config/retroarch/records/피구왕 통키K 팀무풍v0.1.mkv -codec copy /home/odroid/.config/retroarch/records/피구왕 통키K 팀무풍v0.1.mp4 -y
+
+- 퀵 세이브 포인트 정보 저장하기

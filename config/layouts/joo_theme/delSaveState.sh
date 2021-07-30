@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ROMS_PATH=/roms
+EMULATOR=$1
+FILENAME=$2
+SAVEFILE=$3
+
+sudo rm -f "$ROMS_PATH/$EMULATOR/$SAVEFILE"
+sudo rm -f "$ROMS_PATH/$EMULATOR/$SAVEFILE.png"
+sed -i /"$SAVEFILE.png"/d "$ROMS_PATH/$EMULATOR/$FILENAME.saveInfo"

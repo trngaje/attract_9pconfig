@@ -1,0 +1,51 @@
+#!/bin/bash
+
+corename=`basename $2`
+#echo "$1"
+#echo "$corename"
+#echo "$3"
+
+### This no longer has dpad as button, use $dpad to add it as needed.
+### Basic Configuraions - Standard controller mappings 
+basicRK2020="sudo /home/odroid/util/xboxdrv/xboxdrv \
+    --evdev /dev/input/event2 \
+#    --evdev /dev/input/event3 \
+    --evdev-no-grab \
+    --quiet \
+    --detach-kernel-driver \
+    --force-feedback \
+    --deadzone-trigger 15% \
+    --deadzone 4000 \
+    --mimic-xpad \
+#    --evdev-keymap BTN_EAST=b,BTN_SOUTH=a,BTN_NORTH=x,BTN_WEST=y,BTN_TL=lb,BTN_TR=rb,BTN_TL2=tl,BTN_TR2=tr,BTN_SELECT=back,BTN_START=start,BTN_THUMBL=lt,BTN_THUMBR=rt"	
+# for RG351p original
+    --evdev-keymap BTN_EAST=b,BTN_SOUTH=a,BTN_C=x,BTN_NORTH=y,BTN_WEST=lb,BTN_Z=rb,BTN_SELECT=tl,BTN_START=tr,BTN_TR=back,BTN_TL=start,BTN_TL2=lt,BTN_TR2=rt"
+# for RK2020
+#    --evdev-keymap BTN_SOUTH=b,BTN_EAST=a,BTN_NORTH=x,BTN_WEST=y,BTN_TL=lb,BTN_TR=rb,BTN_TRIGGER_HAPPY1=tl,BTN_TRIGGER_HAPPY6=tr,BTN_TRIGGER_HAPPY3=back,BTN_TRIGGER_HAPPY4=start"
+
+#drastic="--ui-buttonmap back+x=KEY_M,back+a=KEY_D,back+y=KEY_S,back+b=KEY_A,back+start=KEY_ESC"
+#for RK2020
+drastic="--ui-buttonmap back+lb=KEY_F7,back+rb=KEY_F5,back+x=KEY_M,back+y=KEY_D,back+b=KEY_A,back+start=KEY_ESC"
+#drastic="--ui-buttonmap rt+lb=KEY_F7,rt+rb=KEY_F5,rt+x=KEY_M,rt+y=KEY_D,rt+b=KEY_A,rt+lt=KEY_ESC"
+#for RK2020
+openmsx="--ui-buttonmap back+tl=KEY_PRINT,back+y=KEY_PAUSE,back+x=KEY_MENU,back+start=KEY_LEFTALT+KEY_F4,back+lb=KEY_LEFTALT+KEY_F7,back+rb=KEY_LEFTALT+KEY_F8"
+#openmsx="--ui-buttonmap rt+tl=KEY_PRINT,rt+y=KEY_PAUSE,rt+x=KEY_MENU,rt+lt=KEY_LEFTALT+KEY_F4,rt+lb=KEY_LEFTALT+KEY_F7,rt+rb=KEY_LEFTALT+KEY_F8"
+
+### Kill Command
+xboxkill="sudo killall xboxdrv > /dev/null 2>&1"
+
+case $corename in
+	drastic.sh)
+		$xboxkill
+		joycommand="$basicRK2020 $drastic &"
+		eval $joycommand
+	;;
+        openmsx)
+                $xboxkill
+                joycommand="$basicRK2020 $openmsx &"
+                eval $joycommand
+        ;;
+esac
+
+
+

@@ -1,0 +1,126 @@
+sound
+	sound_volume         100
+	ambient_volume       100
+	movie_volume         100
+
+input_map
+	toggle_mute          Dash
+	toggle_rotate_right  R
+	toggle_rotate_left   F
+	edit_game            E
+	prev_page            PageUp
+	prev_page            Joy0 Button4
+	select               Return
+	select               Joy1 Button0
+	select               Joy0 Button1
+	back                 Escape
+	back                 Joy0 Button0
+	next_page            PageDown
+	next_page            Joy0 Button5
+	configure            Tab
+	configure            Joy0 Button8
+	add_tags             Joy0 Button7
+	custom2              A+S
+	custom2              Joy0 Button12
+	custom1              T
+	custom1              Joy0 Button9
+	add_favourite        F4
+	add_favourite        Joy0 Button3
+	add_favourite        Joy0 Button2
+	custom3              Joy0 Button10
+	up                   Up
+	up                   Joy0 Up
+	up                   Joy1 PovYneg
+	up                   Joy1 Up
+	up                   Joy0 PovYneg
+	up                   Joy0 Vneg
+	down                 Down
+	down                 Joy0 Down
+	down                 Joy1 PovYpos
+	down                 Joy1 Down
+	down                 Joy0 PovYpos
+	down                 Joy0 Vpos
+	left                 Left
+	left                 Joy0 Left
+	left                 Joy1 Left
+	left                 Joy1 PovXneg
+	left                 Joy0 PovXneg
+	left                 Joy0 Uneg
+	right                Right
+	right                Joy0 Right
+	right                Joy1 PovXpos
+	right                Joy1 Right
+	right                Joy0 PovXpos
+	right                Joy0 Upos
+	exit                 Escape+Return
+	exit                 Joy0 Button8+Joy0 Button9
+	exit                 Joy0 Button10+Joy0 Button13
+	filters_menu         F1
+	filters_menu         Joy0 Button6
+	custom6              Joy0 Button13
+	default             back	displays_menu
+	default             up	prev_game
+	default             down	next_game
+	default             left	prev_display
+	default             right	next_display
+
+general
+	language             kr
+	exit_command         sudo shutdown -h now
+	exit_message         
+	default_font         BinggraeMelona
+	font_path            /usr/share/fonts/;$HOME/.fonts/;/home/odroid/.attract
+	screen_saver_timeout 30
+	displays_menu_exit   no
+	hide_brackets        no
+	startup_mode         displays_menu
+	confirm_favourites   no
+	confirm_exit         yes
+	mouse_threshold      10
+	joystick_threshold   75
+	window_mode          fullscreen
+	filter_wrap_mode     default
+	track_usage          no
+	multiple_monitors    no
+	smooth_images        yes
+	selection_max_step   128
+	selection_speed_ms   40
+	move_mouse_on_launch yes
+	scrape_snaps         no
+	scrape_marquees      no
+	scrape_flyers        no
+	scrape_wheels        no
+	scrape_fanart        no
+	scrape_videos        no
+	scrape_overview      yes
+	thegamesdb_key       
+	video_decoder        software
+	menu_prompt          Displays Menu
+	menu_layout          display_simple_h
+
+saver_config
+	param                alarm_hour 7
+	param                alarm_min 0
+	param                alarm_yn NO
+	param                theme 2
+
+layout_config	attractAdv
+	param                ListEntryYn Y
+	param                all_video No
+	param                art snap
+	param                aspect_ratio No
+	param                blue 80
+	param                enable_time No
+	param                green 80
+	param                playConfirm Y
+	param                red 10
+	param                sel_video Yes
+	param                textColor White
+	param                titleAlign Left
+	param                user_height 480
+	param                user_width 854
+
+plugin	ODROID_Go_Advance
+	enabled              yes
+	param                bottomBar N
+	param                topBar Y

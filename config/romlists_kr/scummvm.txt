@@ -1,0 +1,9 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons
+scummvm;스컴;scummvm;;;;;;;;;;;;;;
+maniac;매니악 맨션;scummvm;;;;;;;;;;;;;;
+monkey;원숭이 섬의 비밀 1;scummvm;;;;;;;;;;;;;;
+monkey2;원숭이 섬의 비밀 2;scummvm;;;;;;;;;;;;;;
+tentacle;텐타클 최후의 날;scummvm;;;;;;;;;;;;;;
+atlantis;인디아나 존스 2;scummvm;;;;;;;;;;;;;;
+indy3;인디아나 존스 3;scummvm;;;;;;;;;;;;;;
+samnmax;샘 & 맥스 히트 더 로드;scummvm;;;;;;;;;;;;;;

@@ -1,0 +1,17 @@
+Disk_info;디스크 정보;Attract Mode Setup;;;;;;;;;;;;;;
+FileManager;파일 매니저;Attract Mode Setup;;;;;;;;;;;;;;
+es_splash;로딩 splash 설정;Attract Mode Setup;;;;;;;;;;;;;;
+Network Info;네트워크 정보;Attract Mode Setup;;;;;;;;;;;;;;
+runcommand_setting;런커맨드 설정;Attract Mode Setup;;;;;;;;;;;;;;
+SambaServer;삼바 서버 시작;Attract Mode Setup;;;;;;;;;;;;;;
+SD-ROM;SD-ROM;Attract Mode Setup;;;;;;;;;;;;;;
+USB-ROM;USB-ROM;Attract Mode Setup;;;;;;;;;;;;;;
+Wifi;Wifi 설정;Attract Mode Setup;;;;;;;;;;;;;;
+oneClickAm;원클릭 리스트 생성;Attract Mode Setup;;;;;;;;;;;;;;
+START_ES;부팅 ES로 시작;Attract Mode Setup;;;;;;;;;;;;;;
+START_AM;부팅 AM으로 시작;Attract Mode Setup;;;;;;;;;;;;;;
+retroarch;레트로아크;Attract Mode Setup;;;;;;;;;;;;;;
+retroarch32;레트로아크 (32bit);Attract Mode Setup;;;;;;;;;;;;;;
+date_setting;시간 설정;Attract Mode Setup;;;;;;;;;;;;;;
+textEditor;텍스트 편집기;Attract Mode Setup;;;;;;;;;;;;;;
+

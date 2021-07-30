@@ -1,0 +1,10 @@
+#!/bin/bash
+
+corename=`basename $2`
+#echo "$1"
+#echo "$corename"
+#echo "$3"
+
+/home/odroid/emulator/drastic/drastic.sh
+
+

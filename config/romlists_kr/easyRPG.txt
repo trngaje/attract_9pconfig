@@ -1,0 +1,3 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons
+The Legend of Zelda - Link's Awakening;젤다의 전설-Link's Awakening;easyRPG;;;;;;;;;;;;;;
+Surprisia;서프라이시아(완전판);easyRPG;;;;;;;;;;;;;;
