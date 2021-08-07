@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PATH_ATTRACT_CONFIG ~/.attract
-PATH_RUNCOMMAND ~/runcommand
+PATH_ATTRACT_CONFIG=$HOME/.attract
+PATH_RUNCOMMAND=$HOME/runcommand
 
 mkdir -p $PATH_ATTRACT_CONFIG
 cp -rv ./config/* $PATH_ATTRACT_CONFIG/
