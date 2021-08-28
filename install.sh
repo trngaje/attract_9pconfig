@@ -14,4 +14,12 @@ cp -rv ./runcommand/* $PATH_RUNCOMMAND/
 
 sudo cp ./scripts/* /usr/local/bin/
 
+# install pyudev for joy2key in runcommand
+sudo apt-get install -y python python-all python-dev python-setuptools dialog
+cd ~
+git clone https://github.com/lunaryorn/pyudev.git
+cd pyudev
+sudo python setup.py install
+cd ..
+rm -rf pyudev
 
