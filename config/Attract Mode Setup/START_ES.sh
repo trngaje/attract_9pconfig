@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cp /home/odroid/.start_es /home/odroid/autostart.sh
-sudo chmod 755 /home/odroid/autostart.sh
+sudo graphics 0
+touch /home/odroid/.launches
 
-sudo killall emulationstation
-sudo reboot
+sync
+sudo shutdown -h now

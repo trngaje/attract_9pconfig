@@ -96,7 +96,7 @@ ScrollingText <- {
                     //resize text object width based on estimated font width (charsize if none provided)
                     obj._text = ScrollingText.actual_text(obj, var);
                     if ( ScrollingText.debug ) print("actual text: " + obj._text + " (" + obj._text.len() + ")\n");
-                    obj.text.width = ( obj.settings.fixed_width != 0 ) ? obj.text.width = obj.settings.fixed_width : ScrollingText.measure_width(obj._text, obj.text.charsize);
+                    //obj.text.width = ( obj.settings.fixed_width != 0 ) ? obj.text.width = obj.settings.fixed_width : ScrollingText.measure_width(obj._text, obj.text.charsize);
                     
                     //reset scroll count
                     obj._count = 0;
@@ -110,7 +110,7 @@ ScrollingText <- {
                             break;
                         case ScrollType.HORIZONTAL_LEFT:
                             obj.text.align = Align.Left;
-                            obj.text.x = obj.surface.width;
+                            obj.text.x = 0; //obj.surface.width;
                             obj._dir = "left";
                             break;
                         case ScrollType.HORIZONTAL_RIGHT:
@@ -205,10 +205,19 @@ ScrollingText <- {
                 break;
             case "left":
                 //horizontal scroll
-                if ( obj.text.x > -obj.text.width )
+				if (obj.surface.width > obj.text.msg_width) {
+					obj.text2.visible = false;
+					
+					obj.text.x = 0; // by trngaje
+					obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje					
+					break;
+				}
+				
+                if ( obj.text.x > -obj.text.msg_width )
                 {
                     //scroll
                     obj.text.x -= obj.settings.speed_x;
+					obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje
                 } else
                 {
                     //loop
@@ -219,9 +228,12 @@ ScrollingText <- {
                     } else
                     {
                         obj._dir = "left";
-                        obj.text.x = obj.surface.width;
+                        obj.text.x = 0; //obj.surface.width;
+						obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje
                     }
                 }
+				
+				obj.text2.visible = true;
                 break;
             case "right":
                 if ( obj.text.x < obj.surface.width )
@@ -298,7 +310,7 @@ ScrollingText <- {
     },
     measure_width = function(text, font_width) {
         //estimate the width of the actual text content
-        local length = text.len() * font_width.tofloat();
+        local length = len() * font_width.tofloat();
         if ( ScrollingText.debug ) print("measure_width: " + text.len() + ", " + font_width + ": " + length + "\n");
         return length;
     },
@@ -321,18 +333,22 @@ ScrollingText <- {
         }
         
         //create a text object that will be manipulated in ticks callback
-        local text_obj = surface_obj.add_text( text, 0, 0, surface_obj.width, surface_obj.height );
+        local text_obj = surface_obj.add_text( text, 0, 0, 1000/*surface_obj.width*/, surface_obj.height );
         if ( ScrollingText.debug )
         {
             text_obj.set_rgb( 0, 0, 0 );
             text_obj.set_bg_rgb( 0, 100, 100);
         }
         
+		local text2_obj = surface_obj.add_text( text, 0, 0, 1000/*surface_obj.width*/, surface_obj.height ); // by trngaje
+		
         //create a scrolling text object
         local scroll_obj = {
             surface = surface_obj,
             surface_bg = bg_obj,
             text = text_obj,
+			text2 = text2_obj, // by trngaje			
+			
             _text = text,
             _type = scroll_type,
             _count = 0,
@@ -361,6 +377,7 @@ ScrollingText <- {
                 transition_reset = true,
             }
         }
+		
         ScrollingText.objs.push( scroll_obj );
         return scroll_obj;
     }

@@ -56,9 +56,14 @@ function func_setScreenshotRecords()
 # joy2key 프로세스 죽이기
 function func_KillJoy2Key()
 {
-	JOY2KEY_PID=$(pgrep -f joy2key.py)
+	#JOY2KEY_PID=$(pgrep -f joy2key.py)
 	#sudo kill -INT "$JOY2KEY_PID"
-	sudo killall joy2key.py > /dev/null 2>&1
+	#sudo killall -w joy2key.py > /dev/null 2>&1
+	JOY2KEY_PIDS=`ps -C joy2key.py | awk 'NR>1 {print $1}'`
+	for JOY2KEY_PID in $JOY2KEY_PIDS
+	do
+		sudo kill -9 $JOY2KEY_PID
+	done
 }
 
 # 에뮬레이터별 코어 값 cfg 불러오기
@@ -70,7 +75,7 @@ function func_LoadEmulatorCfg()
 		echo "CFG LOAD : $RUNCOMMAND_PATH/cfg/$EMULATOR.cfg" >> $LOG_FILE
 	else
 		echo "CFG LOAD ERROR : $RUNCOMMAND_PATH/cfg/$EMULATOR.cfg" >> $LOG_FILE
-		func_KillJoy2Key
+#		func_KillJoy2Key
 		exit 0
 	fi
 	
@@ -191,6 +196,8 @@ function func_LaunchImmediately()
 	func_LoadEmulatorCfg
 	func_LoadGameCore
 	func_LaunchGame
+	
+	exit 0
 }
 
 # 게임 실행
@@ -214,8 +221,9 @@ function func_LaunchGame()
 
 	#perfmax
 
-	$SCRIPT_PATH/xboxdrv_start.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
-
+#	$SCRIPT_PATH/xboxdrv_start.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
+	sudo graphics 1 &
+	
 	## 32bit / 64bit 구분 ( 앞에 "32-" 가 붙으면 32비트 구동
 	if [[ "$CORE" == *".so"* ]]; then
 		if [[ "$CORE" == *"32-"* ]]; then
@@ -240,10 +248,10 @@ function func_LaunchGame()
 		$CORE "$ROM" > /dev/null 2>&1
 	fi
 
-	$SCRIPT_PATH/xboxdrv_end.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
+#	$SCRIPT_PATH/xboxdrv_end.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
 	$SCRIPT_PATH/runcommand_end.sh "$EMULATOR" "$ROM_FILENAME" > /dev/null 2>&1
 	#perfnorm
-	sudo killall ffplay
+#	sudo killall -w ffplay
 	exit 0
 }
 
@@ -283,7 +291,7 @@ function func_CoreSelectMenu()
 		1) func_GameCoreSelect;;
 		2) func_GameCoreRemove;;
 		3) func_LaunchGame;;
-		EXIT) func_KillJoy2Key;exit 0;;
+		EXIT) func_KillJoy2Key; sudo graphics 1; exit 0;;
 		*) func_LaunchGame;;
 	esac	
 }
@@ -293,43 +301,46 @@ function func_CoreSelectMenu()
 
 ##### Main Function ##################################################################
 
-#clear
+echo "performance" | sudo tee /sys/devices/system/cpu/cpufreq/policy2/scaling_governor
 
-$SCRIPT_PATH/runcommand_start.sh > /dev/null 2>&1
+sudo graphics 0
+
+# $SCRIPT_PATH/runcommand_start.sh > /dev/null 2>&1
 
 # joy2key enable - up down A-button
-if [ "$PADNAME" = "OpenSimHardware OSH PB Controller" ]; then
-"$RUNCOMMAND_PATH/joy2key.py" "/dev/input/js1" kcub1 kcuf1 kcuu1 kcud1 0x0a 0x09 & 
-else
+# if [ "$PADNAME" = "OpenSimHardware OSH PB Controller" ]; then
+# "$RUNCOMMAND_PATH/joy2key.py" "/dev/input/js1" kcub1 kcuf1 kcuu1 kcud1 0x0a 0x09 & 
+# else
 "$RUNCOMMAND_PATH/joy2key.py" "/dev/input/js0" kcub1 kcuf1 kcuu1 kcud1 0x0a 0x09 & 
-fi
+# fi
 
 echo "EMULATOR : $EMULATOR" > $LOG_FILE
 echo "ROM_FULL_PATH : $ROM" >> $LOG_FILE 
 echo "ROM : $ROM_TINY" >> $LOG_FILE
 echo "ROM_FILENAME : $ROM_FILENAME" >> $LOG_FILE
 
-if [ "$EMULATOR" == "ports" ] || [ "$EMULATOR" == "easyrpg" ]; then
+if [ "$EMULATOR" == "ports" ]; then
 	echo "RUNCOMMAND : $ROM" >> $LOG_FILE
 	sleep 1
 	func_KillJoy2Key
 	#perfmax
 	/bin/bash "$ROM"
 	#perfnorm
-	sudo killall ffplay
+#	sudo killall -w ffplay
 	exit 0
 fi
 
 
 
-if read -s -t $TIME -N 1 key; then
+if read -s -t $TIME -N 1; then
 	while [ 1 ]; do
-		sudo killall ffplay
+#		sudo killall -w ffplay
 		func_CoreSelectMenu
 	done
 else
 	func_LaunchImmediately
 fi
 
+exit 0
 clear
 #######################################################################################

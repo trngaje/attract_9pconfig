@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 PATH_ATTRACT_CONFIG=$HOME/.attract
 PATH_RUNCOMMAND=$HOME/runcommand

@@ -2,5 +2,6 @@
 
 #sudo mount -t exfat /dev/sda1 /mnt
 
-DinguxCommander.sh
-
+#DinguxCommander.sh
+cd /home/odroid/utils/dinguxcommander
+./DinguxCommander

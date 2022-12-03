@@ -7,7 +7,9 @@
 #cd ..
 #PATH_SCRIPTS=`pwd -P`
 
-AM_PATH=/usr/games
+sudo graphics 0
+
+AM_PATH=/usr/local/bin
 AM_CFG_PATH=$HOME/.attract
 
 echo $AM_CFG_PATH
@@ -186,3 +188,7 @@ echo
 echo
 echo "reboot after 3 seconds."
 echo
+
+attract --loglevel silent &
+sudo graphics 1
+

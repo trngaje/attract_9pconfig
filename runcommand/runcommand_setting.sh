@@ -5,9 +5,16 @@ RUNCOMMAND_PATH="/home/odroid/runcommand"
 # joy2key 프로세스 죽이기
 function func_KillJoy2Key()
 {
-	JOY2KEY_PID=$(pgrep -f joy2key.py)
+	#JOY2KEY_PID=$(pgrep -f joy2key.py)
 	#sudo kill -INT "$JOY2KEY_PID"
-	sudo killall joy2key.py > /dev/null 2>&1
+	#sudo killall -w joy2key.py > /dev/null 2>&1
+	
+	JOY2KEY_PIDS=`ps -C joy2key.py | awk 'NR>1 {print $1}'`
+	for JOY2KEY_PID in $JOY2KEY_PIDS
+	do
+		sudo kill -9 $JOY2KEY_PID
+	done
+	
 }
 
 
@@ -36,10 +43,10 @@ function func_RuncommandSetting()
 	############################################ select menu #######################################################
 	timeItem=`cat $RUNCOMMAND_PATH/timeItem` 
 
+	func_KillJoy2Key
 	if [ "$timeItem" != "EXIT" ]; then
 		sed -i "3s/.*/TIME=${TIMES[$timeItem]}/g" $RUNCOMMAND_PATH/runcommand.cfg
 	else
-		func_KillJoy2Key
 		exit 0
 	fi
 }
@@ -49,13 +56,16 @@ function func_RuncommandSetting()
 
 ##### Main Function ##################################################################
 
+sudo graphics 0
 clear
+func_KillJoy2Key
+
 # joy2key enable - up down A-button
 "$RUNCOMMAND_PATH/joy2key.py" "/dev/input/js0" kcub1 kcuf1 kcuu1 kcud1 0x0a 0x09 & 
 
-while [ 1 ]; do
+#while [ 1 ]; do
 	func_RuncommandSetting
-done
+#done
 
 clear
 #######################################################################################

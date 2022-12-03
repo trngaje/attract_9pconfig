@@ -9,7 +9,7 @@ then
     emulatorname="${cfgname%.*}"
     echo $emulatorname
     #echo $HOME
-    path_roms="$HOME/roms"
+    path_roms="/mnt/sdcard/roms"
     sed -i 's/executable.*/executable           runcommand.sh/g' $1
     sed -i "s/args.*/args                 $emulatorname "'"[romfilename]"/g' $1
     sed -i "s|rompath.*|rompath              $path_roms/$emulatorname|g" $1

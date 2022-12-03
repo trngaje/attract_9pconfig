@@ -5,7 +5,7 @@ SCREENSHOT_PATH="/home/odroid/.config/retroarch/screenshots"
 RECORDS_PATH="/home/odroid/.config/retroarch/records"
 
 # roms Path
-ROMS_PATH="/home/odroid/roms"
+ROMS_PATH="/mnt/sdcard/roms"
 
 
 
