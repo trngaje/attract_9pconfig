@@ -1,0 +1,6 @@
+SuperMarioRpgSevenSagesV1.7.0;SuperMarioRpgSevenSagesV1.7.0;easyrpg;;;;;;;;;;;;;;;;;;
+TetrisV2.2;TetrisV2.2;easyrpg;;;;;;;;;;;;;;;;;;
+ZeldaLinksAwakening;ZeldaLinksAwakening;easyrpg;;;;;;;;;;;;;;;;;;
+ZeldaTheOakQuest;ZeldaTheOakQuest;easyrpg;;;;;;;;;;;;;;;;;;
+ib_ko;ib_ko;easyrpg;;;;;;;;;;;;;;;;;;
+서프라이시아;서프라이시아;easyrpg;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,12 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons;Series;Language;Region;Rating
+bublbobl;bublbobl;hbmame;;;;;;;;;;;;;;;;;;
+gunbird2;gunbird2;hbmame;;;;;;;;;;;;;;;;;;
+mslug2;mslug2;hbmame;;;;;;;;;;;;;;;;;;
+mslug2ps02;mslug2ps02;hbmame;;;;;;;;;;;;;;;;;;
+neogeo;neogeo;hbmame;;;;;;;;;;;;;;;;;;
+outrun;outrun;hbmame;;;;;;;;;;;;;;;;;;
+pc_bb2;pc_bb2;hbmame;;;;;;;;;;;;;;;;;;
+snowbros;snowbros;hbmame;;;;;;;;;;;;;;;;;;
+snowbross04;snowbross04;hbmame;;;;;;;;;;;;;;;;;;
+sonicwi2;sonicwi2;hbmame;;;;;;;;;;;;;;;;;;
+tengai;tengai;hbmame;;;;;;;;;;;;;;;;;;

@@ -1,1 +1,10 @@
 Tekken 3 (J) (Track 1) [SLPS-01300];Tekken 3 (J) (Track 1) [SLPS-01300];psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It);Vib-Ribbon (Europe) (En,Fr,De,Es,It);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 1);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 1);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 2);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 2);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 3);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 3);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 4);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 4);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 5);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 5);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 6);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 6);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 7);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 7);psx;;;;;;;;;;;;;;;;;;
+Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 8);Vib-Ribbon (Europe) (En,Fr,De,Es,It) (Track 8);psx;;;;;;;;;;;;;;;;;;

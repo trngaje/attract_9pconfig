@@ -1,13 +1,4 @@
 2048;2048;ports;;;;;;;;;;;;;;;;;;
-Flashback;Flashback;ports;;;;;;;;;;;;;;;;;;
-MrBoom;MrBoom;ports;;;;;;;;;;;;;;;;;;
-OpenBOR;OpenBOR;ports;;;;;;;;;;;;;;;;;;
-SMW;SMW;ports;;;;;;;;;;;;;;;;;;
-Sonic Robo Blast;Sonic Robo Blast;ports;;;;;;;;;;;;;;;;;;
-Sonic Robo Blast Kart;Sonic Robo Blast Kart;ports;;;;;;;;;;;;;;;;;;
-Thepowdertoy;Thepowdertoy;ports;;;;;;;;;;;;;;;;;;
-cdogs;cdogs;ports;;;;;;;;;;;;;;;;;;
-dinothawr;dinothawr;ports;;;;;;;;;;;;;;;;;;
 동굴이야기 (한글);동굴이야기 (한글);ports;;;;;;;;;;;;;;;;;;
 마계촌;마계촌;ports;;;;;;;;;;;;;;;;;;
 삽질 기사;삽질 기사;ports;;;;;;;;;;;;;;;;;;

@@ -62,7 +62,7 @@ function func_KillJoy2Key()
 	JOY2KEY_PIDS=`ps -C joy2key.py | awk 'NR>1 {print $1}'`
 	for JOY2KEY_PID in $JOY2KEY_PIDS
 	do
-		sudo kill -9 $JOY2KEY_PID
+		sudo kill -9 $JOY2KEY_PID > /dev/null 2>&1
 	done
 }
 
@@ -221,7 +221,7 @@ function func_LaunchGame()
 
 	#perfmax
 
-#	$SCRIPT_PATH/xboxdrv_start.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
+	$SCRIPT_PATH/xboxdrv_start.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
 	sudo graphics 1 &
 	
 	## 32bit / 64bit 구분 ( 앞에 "32-" 가 붙으면 32비트 구동
@@ -238,9 +238,11 @@ function func_LaunchGame()
 		else
 			echo "RUNCOMMAND : $RETROARCH_EXEC -L \"$CORE_PATH/$CORE\" \"$ROM\"" >> $LOG_FILE
 			if [ "$EMULATOR" == "dreamcast" ] || [ "$EMULATOR" == "atomiswave" ] || [ "$EMULATOR" == "naomi" ]; then
-				$RETROARCH_EXEC -L "$CORE_PATH/$CORE" < /dev/null "$ROM" > /dev/null 2>&1
+				$RETROARCH_EXEC -v -L "$CORE_PATH/$CORE" < /dev/null "$ROM" > /dev/null 2>&1
 			else
-				$RETROARCH_EXEC -L "$CORE_PATH/$CORE" "$ROM" > /dev/null 2>&1
+				$RETROARCH_EXEC -v -L "$CORE_PATH/$CORE" "$ROM"  >> $LOG_FILE
+ 
+#> /dev/null 2>&1
 			fi
 		fi
 	else
@@ -248,7 +250,7 @@ function func_LaunchGame()
 		$CORE "$ROM" > /dev/null 2>&1
 	fi
 
-#	$SCRIPT_PATH/xboxdrv_end.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
+	$SCRIPT_PATH/xboxdrv_end.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
 	$SCRIPT_PATH/runcommand_end.sh "$EMULATOR" "$ROM_FILENAME" > /dev/null 2>&1
 	#perfnorm
 #	sudo killall -w ffplay

@@ -1,1 +1,9 @@
-Mole Mania;Mole Mania;gb;;;;;;;;;;;;;;;;;;
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons;Series;Language;Region;Rating
+GB열혈신기록;GB열혈신기록;gb;;;;;;;;;;;;;;;;;;
+Space Invaders (USA);Space Invaders (USA);gb;;;;;;;;;;;;;;;;;;
+마리오의 피크로스;마리오의 피크로스;gb;;;;;;;;;;;;;;;;;;
+열투 더 킹 오브 파이터즈 95;열투 더 킹 오브 파이터즈 95;gb;;;;;;;;;;;;;;;;;;
+열투 킹 오브 파이터즈 96(한);열투 킹 오브 파이터즈 96(한);gb;;;;;;;;;;;;;;;;;;
+짱구는못말려-나랑 흰둥이는 친구야;짱구는못말려-나랑 흰둥이는 친구야;gb;;;;;;;;;;;;;;;;;;
+최후의인도;최후의인도;gb;;;;;;;;;;;;;;;;;;
+피크로스2(한);피크로스2(한);gb;;;;;;;;;;;;;;;;;;

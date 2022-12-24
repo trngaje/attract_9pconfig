@@ -28,18 +28,18 @@ if ( my_config["topBar"] == "Y" )
 	local ipText = fe.add_text( "-", 290, -2, 137, 18 );
 	ipText.align = Align.Left;
 
-	//local soundIcon = fe.add_image( "icon/sound_white.png", 680, 0, 15, 15 );
-	//local soundText = fe.add_text( "-", 685, -2, 45, 18 );
-	//soundText.align = Align.Right;
+	local soundIcon = fe.add_image( "icon/sound_white.png", 680, 0, 15, 15 );
+	local soundText = fe.add_text( "-", 685, -2, 45, 18 );
+	soundText.align = Align.Right;
 
-	//local brightIcon  = fe.add_image( "icon/bright_white.png", 740, 0, 15, 15 );
-	//local brightText = fe.add_text( "-", 745, -2, 45, 18 );
-	//brightText.align = Align.Right;
+	local brightIcon  = fe.add_image( "icon/bright_white.png", 740, 0, 15, 15 );
+	local brightText = fe.add_text( "-", 745, -2, 45, 18 );
+	brightText.align = Align.Right;
 
-	//local batteryIcon= fe.add_image( "icon/battery_nocharging_white.png", 800, 0, 10, 15 );
+	local batteryIcon= fe.add_image( "icon/battery_nocharging_white.png", 800, 0, 10, 15 );
 	//batteryIcon.preserve_aspect_ratio = false;
-	//local batteryText= fe.add_text( "-" , 805, -2, 45, 18 );
-	//batteryText.align = Align.Right;
+	local batteryText= fe.add_text( "-" , 805, -2, 45, 18 );
+	batteryText.align = Align.Right;
 
 	local cpufreqText= fe.add_text( "-" , 430, -2, 100, 18 );
 	cpufreqText.align = Align.Right;
@@ -100,14 +100,14 @@ if ( my_config["topBar"] == "Y" )
 
 	function ogaStatus()
 	{
-		//fe.plugin_command( "/bin/sh", "-c \"cat /home/odroid/util/globalkey/volumePer\"", "any_command_callback" );
-		//soundText.msg = output;
+		fe.plugin_command( "/bin/sh", "-c \"echo `amixer sget Playback | grep 'Right:' | awk -F'[][%]' '{ print $2 }'`\"", "any_command_callback" );
+		soundText.msg = output;
 		//soundText.msg = 100;
-		//fe.plugin_command( "/bin/sh", "-c \"expr `cat /sys/class/backlight/backlight/brightness` \\* 100 / 160\"", "any_command_callback" );
-		//brightText.msg = output;
+		fe.plugin_command( "/bin/sh", "-c \"expr `cat /sys/class/backlight/backlight/brightness` \\* 100 / 160\"", "any_command_callback" );
+		brightText.msg = output;
 		//brightText.msg = 100;
-		//fe.plugin_command( "/bin/sh", "-c \"cat /sys/class/power_supply/battery/capacity\"", "any_command_callback" );
-		//batteryText.msg = output;
+		fe.plugin_command( "/bin/sh", "-c \"cat /sys/class/power_supply/battery/capacity\"", "any_command_callback" );
+		batteryText.msg = output;
 		//batteryText.msg = 100;
 
 		fe.plugin_command( "/bin/sh", "-c "+ fe.script_dir + "/cpufreq.sh", "any_command_callback" );
@@ -118,11 +118,11 @@ if ( my_config["topBar"] == "Y" )
 
 
 
-//		fe.plugin_command( "/bin/sh", "-c \"cat /sys/class/power_supply/battery/status\"", "any_command_callback" );
-//		if( output.find("Charging") != null )
-//			batteryIcon.file_name = "icon/battery_charging_white.png";
-//		else
-//			batteryIcon.file_name = "icon/battery_nocharging_white.png";
+		fe.plugin_command( "/bin/sh", "-c \"cat /sys/class/power_supply/battery/status\"", "any_command_callback" );
+		if( output.find("Charging") != null )
+			batteryIcon.file_name = "icon/battery_charging_white.png";
+		else
+			batteryIcon.file_name = "icon/battery_nocharging_white.png";
 			
 
 
@@ -134,11 +134,12 @@ if ( my_config["topBar"] == "Y" )
 		
 		fe.plugin_command( "/bin/sh", "-c \"hostname -I\"", "any_command_callback" );
 		ipText.msg = output;
-
+/*
 		fe.plugin_command( "/bin/sh", "-c \"sudo find /mnt/ -maxdepth 1 -name 9p\"", "any_command_callback" );
 		if( output.find("9p") != null )
 			romiconText.msg = "USB";
 		else
+*/
 			romiconText.msg = "";
 
 		//print("ogaStatus\n");

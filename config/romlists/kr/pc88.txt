@@ -1,0 +1,5 @@
+Shanghai II;Shanghai II;pc88;;;;;;;;;;;;;;;;;;
+Shanghai II [Set 1];Shanghai II [Set 1];pc88;;;;;;;;;;;;;;;;;;
+Ys (Demo);Ys (Demo);pc88;;;;;;;;;;;;;;;;;;
+Ys (Disk A);Ys (Disk A);pc88;;;;;;;;;;;;;;;;;;
+Ys (Disk B);Ys (Disk B);pc88;;;;;;;;;;;;;;;;;;

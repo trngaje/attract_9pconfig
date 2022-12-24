@@ -1,1 +1,4 @@
 225 Steam Hearts (J);225 Steam Hearts (J);saturn;;;;;;;;;;;;;;;;;;
+GRANDIA Disc1;GRANDIA Disc1;saturn;;;;;;;;;;;;;;;;;;
+GRANDIA Disc2;GRANDIA Disc2;saturn;;;;;;;;;;;;;;;;;;
+Shinpi no Sekai El-Hazard;Shinpi no Sekai El-Hazard;saturn;;;;;;;;;;;;;;;;;;

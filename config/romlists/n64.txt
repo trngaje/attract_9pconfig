@@ -1,4 +1,3 @@
-Doubutsu no Mori (Japan);Doubutsu no Mori (Japan);n64;;;;;;;;;;;;;;;;;;
-Kirby 64 - The Crystal Shards (Europe);Kirby 64 - The Crystal Shards (Europe);n64;;;;;;;;;;;;;;;;;;
-Mario Kart 64 (USA);마리오 카트 64 (미국판);n64;;;;;;;;;;;;;;
-Nintendo All-Star! Dairantou Smash Brothers (J) [!];Nintendo All-Star! Dairantou Smash Brothers (J) [!];n64;;;;;;;;;;;;;;;;;;
+Dr. Mario 64 (U) [!];Dr. Mario 64 (U) [!];n64;;;;;;;;;;;;;;;;;;
+Neon Genesis Evangelion (K)[SMJ];Neon Genesis Evangelion (K)[SMJ];n64;;;;;;;;;;;;;;;;;;
+New Tetris, The (USA);New Tetris, The (USA);n64;;;;;;;;;;;;;;;;;;
