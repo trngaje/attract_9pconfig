@@ -223,7 +223,7 @@ function func_LaunchGame()
 
 	$SCRIPT_PATH/xboxdrv_start.sh "$EMULATOR" "$CORE" "$ROM_FILENAME" > /dev/null 2>&1
 	sudo graphics 1 &
-	
+
 	## 32bit / 64bit 구분 ( 앞에 "32-" 가 붙으면 32비트 구동
 	if [[ "$CORE" == *".so"* ]]; then
 		if [[ "$CORE" == *"32-"* ]]; then
@@ -240,7 +240,7 @@ function func_LaunchGame()
 			if [ "$EMULATOR" == "dreamcast" ] || [ "$EMULATOR" == "atomiswave" ] || [ "$EMULATOR" == "naomi" ]; then
 				$RETROARCH_EXEC -v -L "$CORE_PATH/$CORE" < /dev/null "$ROM" > /dev/null 2>&1
 			else
-				$RETROARCH_EXEC -v -L "$CORE_PATH/$CORE" "$ROM"  >> $LOG_FILE
+				$RETROARCH_EXEC -v -L "$CORE_PATH/$CORE" "$ROM"  >> $LOG_FILE 2>&1
  
 #> /dev/null 2>&1
 			fi

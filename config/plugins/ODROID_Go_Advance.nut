@@ -174,3 +174,44 @@ if ( my_config["bottomBar"] == "Y" )
 
 	}
 }
+
+
+
+
+fe.add_signal_handler(  "on_signal2" );
+function on_signal2( sig )
+{
+	switch ( sig )	
+	{
+		case "custom4":
+			local optionsSubMenu = ["블루투스 설정", "와이파이 설정", "전원 끄기", "취소"];
+			local command = fe.overlay.list_dialog( optionsSubMenu,  "메뉴를 선택해 주세요?");
+			
+			if ( command == 0 )
+			{
+				fe.do_nut("/home/odroid/.attract/plugins/setting_bt.nut");
+			}
+			else if ( command == 1 )
+			{
+				fe.do_nut("/home/odroid/.attract/plugins/setting_network.nut");
+			}			
+			else if( command == 2 )	
+			{
+				fe.plugin_command( "/bin/sh", "-c \"sudo shutdown -h now\"");
+			}
+				
+			return true;
+				
+//			fe.do_nut("setting_network.nut");
+			return true;
+//		case "custom5":
+//			fe.do_nut("setting_bt.nut");
+//			return true;
+
+	}
+
+	
+
+	
+	return false;
+}

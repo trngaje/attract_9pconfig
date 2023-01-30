@@ -209,15 +209,15 @@ ScrollingText <- {
 					obj.text2.visible = false;
 					
 					obj.text.x = 0; // by trngaje
-					obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje					
+					obj.text2.x = obj.text.x + obj.text.msg_width + 20; // by trngaje					
 					break;
 				}
 				
-                if ( obj.text.x > -obj.text.msg_width )
+                if ( obj.text.x > -obj.text.msg_width -20)
                 {
                     //scroll
                     obj.text.x -= obj.settings.speed_x;
-					obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje
+					obj.text2.x = obj.text.x + obj.text.msg_width + 20; // by trngaje
                 } else
                 {
                     //loop
@@ -229,7 +229,7 @@ ScrollingText <- {
                     {
                         obj._dir = "left";
                         obj.text.x = 0; //obj.surface.width;
-						obj.text2.x = obj.text.x + obj.text.msg_width; // by trngaje
+						obj.text2.x = obj.text.x + obj.text.msg_width + 20; // by trngaje
                     }
                 }
 				

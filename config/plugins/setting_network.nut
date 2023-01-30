@@ -3,9 +3,9 @@ squirrel file for attractmode
 network setting with nmcli
 */
 
-fe.layout.font="font.ttf";
+//fe.layout.font="font.ttf";
 
-local options = ["+Wifi 연결 추가"];
+local options = ["+와이파이 연결 추가"];
 
 function any_command_callback( tt )
 {
@@ -102,9 +102,23 @@ if (wifi_ssid_name.len() > 0) {
 		}
 		return str;
 	}
-	
-	fe.add_signal_handler( "on_signal" );
-	function on_signal( sig )
+
+
+	fe.add_transition_callback( "wifi_transition" );
+	function wifi_transition( ttype, var, transition_time )
+	{
+		local redraw_needed = false;
+		if( ttype == Transition.EndLayout && var == FromTo.ScreenSaver )
+		{
+			::print( "\n\nSCREENSAVERRRR\n\n" );
+			//return true;
+		}
+	   
+	   return false;
+	}
+
+	fe.add_signal_handler( "on_wifi_signal" );
+	function on_wifi_signal( sig )
 	{
 		switch ( sig )	
 		{
@@ -179,6 +193,6 @@ if (wifi_ssid_name.len() > 0) {
 				return true;
 		}	
 
-		return false;
+		return true;
 	}
 }

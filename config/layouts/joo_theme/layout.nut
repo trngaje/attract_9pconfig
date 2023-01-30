@@ -28,13 +28,8 @@ local my_config = fe.get_config();
 
 
 // 레이아웃 해상도 설정
-local customRate = 1;
-//local monitor_width = 	480/customRate;		// 레이아웃 width
-//local monitor_height = 	320/customRate;		// 레이아웃 height
-//local monitor_width = 	854/customRate;		// 레이아웃 width
-//local monitor_height = 	480/customRate;		// 레이아웃 height
-local monitor_width =         ScreenWidth/customRate;         // 레이아웃 width
-local monitor_height =        ScreenHeight/customRate;         // 레이아웃 height
+local monitor_width = ScreenWidth;         // 레이아웃 width
+local monitor_height = ScreenHeight;         // 레이아웃 height
 
 
 //fe.layout.width =  monitor_width;	// Set 레이아웃 해상도 width
@@ -58,8 +53,7 @@ function move_sound()
 fe.add_image( "ui/background.png", 0, 0, fe.layout.width, fe.layout.height); 
 
 
-//local snap = fe.add_artwork( "snap", monitor_width/2/customRate, 60/customRate, monitor_width/2/customRate, 300/customRate );
-local snap = fe.add_artwork( "snap", monitor_width/2/customRate, monitor_height * 0.12/customRate, monitor_width/2/customRate, monitor_height * 0.62 /customRate );
+local snap = fe.add_artwork( "snap", monitor_width/2, monitor_height * 0.12, monitor_width/2, monitor_height * 0.62);
 
 snap.preserve_aspect_ratio = true;//false;
 snap.trigger = Transition.EndNavigation;
@@ -70,13 +64,13 @@ snap.video_flags=Vid.NoLoop;
 
 
 // 리스트박스 
-local bgColor = fe.add_text( "", 0/customRate, 0, monitor_width/2/customRate, monitor_height/customRate ); 	// 리스트 박스 뒷 배경 위치
+local bgColor = fe.add_text( "", 0, 0, monitor_width/2, monitor_height ); 	// 리스트 박스 뒷 배경 위치
 bgColor.set_bg_rgb( 0, 0, 10);					// 리스트 박스 뒷 배경 색상
 bgColor.bg_alpha = 100;							// 선택 리스트 배경 투명도
 
-local listbox = fe.add_listbox( 0/customRate, 0/customRate, monitor_width/2/customRate, monitor_height/customRate );	// 리스트 박스 생성
-//listbox.charsize = 30/customRate;								// 폰트 크기
-listbox.charsize = monitor_height * 0.06/customRate;								// 폰트 크기
+local listbox = fe.add_listbox( 0, 0, monitor_width/2, monitor_height );	// 리스트 박스 생성
+//listbox.charsize = 30;								// 폰트 크기
+listbox.charsize = monitor_height * 0.06;								// 폰트 크기
 listbox.align = Align.MiddleLeft;					// 리스트 정렬
 listbox.set_rgb( 255, 255, 255 );				// 리스트 전체 폰트 색상
 listbox.set_sel_rgb( 255, 255, 255 );				// 선택 리스트 폰트 색상
@@ -94,9 +88,9 @@ local favoriteR=abs(("0"+my_config["favoriteR"]).tointeger());
 local favoriteG=abs(("0"+my_config["favoriteG"]).tointeger());
 local favoriteB=abs(("0"+my_config["favoriteB"]).tointeger());
 
-local listbox_fav = fe.add_listbox( - (monitor_width * 0.02), 0/customRate, fe.layout.width/2+ monitor_width*0.02/customRate, fe.layout.height/customRate );
+local listbox_fav = fe.add_listbox( - (monitor_width * 0.02), 0, fe.layout.width/2+ monitor_width*0.02, fe.layout.height );
 
-listbox_fav.charsize = monitor_height * 0.06/customRate;
+listbox_fav.charsize = monitor_height * 0.06;
 listbox_fav.set_sel_rgb( favoriteR, favoriteG, favoriteB);
 listbox_fav.set_rgb( favoriteR, favoriteG, favoriteB);
 listbox_fav.selbg_alpha = 0;
@@ -107,8 +101,8 @@ listbox_fav.rows = 9;
 // for scrolltext by trngaje
 
 local scrolltext_x = 0;
-local scrolltext_w = monitor_width/2/customRate
-local scrolltext_h = fe.layout.height/customRate / listbox_fav.rows;
+local scrolltext_w = monitor_width/2;
+local scrolltext_h = fe.layout.height / listbox_fav.rows;
 local scrolltext_y = listbox_fav.rows / 2 * scrolltext_h -1;
 
 local favorite_range = fe.add_text( "★ ", scrolltext_x+38, scrolltext_y, scrolltext_w-38, scrolltext_h );
@@ -158,20 +152,20 @@ function koreList( index_offset )
 
 
 
-local filterName = fe.add_text("『 [FilterName] 』", monitor_width * 0.49/customRate, monitor_height * 0.05/customRate, monitor_width * 0.29/customRate, monitor_height * 0.06/customRate  );	// 리스트 엔트리 위치
+local filterName = fe.add_text("『 [FilterName] 』", monitor_width * 0.49, monitor_height * 0.05, monitor_width * 0.29, monitor_height * 0.06  );	// 리스트 엔트리 위치
 
 
 filterName.set_rgb( 255, 255, 255 );					// 폰트 색상
-filterName.charsize = monitor_height * 0.06/customRate;						// 폰트 크기
+filterName.charsize = monitor_height * 0.06;						// 폰트 크기
 filterName.align = Align.Left;				// 정렬
 
 
 // 현제 게임 리스트 순선 / 전체 게임 리스트 갯수
-local list = fe.add_text("[ListEntry] / [ListSize]", monitor_width * 0.70/customRate, monitor_height * 0.05/customRate, monitor_width * 0.29/customRate, monitor_height * 0.06/customRate  );	// 리스트 엔트리 위치
+local list = fe.add_text("[ListEntry] / [ListSize]", monitor_width * 0.70, monitor_height * 0.05, monitor_width * 0.29, monitor_height * 0.06 );	// 리스트 엔트리 위치
 
 
 list.set_rgb( 255, 255, 255 );					// 폰트 색상
-list.charsize = monitor_height * 0.06/customRate;						// 폰트 크기
+list.charsize = monitor_height * 0.06;						// 폰트 크기
 list.align = Align.Right;				// 정렬
 //list.msg = "1000 / 1000";
 
@@ -180,14 +174,13 @@ list.align = Align.Right;				// 정렬
 /*
 if ( my_config["marqueeYn"] == "Yes" )
 {
-	local marqueeName = fe.add_artwork( "marquee" , 360/customRate, 50/customRate, 250/customRate, 70/customRate );
+	local marqueeName = fe.add_artwork( "marquee" , 360, 50, 250, 70 );
 }
 */
 
 // 에뮬레이터 로고 - 왼쪽 상단
 // layout/joo_theme/emulator 폴더의 파일 출력
-//local emulatorLogo = fe.add_image( "./emulator_logo/"+ "[Emulator]" + ".png" , 	440/customRate, 370/customRate, 400/customRate, 70/customRate );
-local emulatorLogo = fe.add_image( "./emulator_logo/"+ "[Emulator]" + ".png" , 	monitor_width*0.51/customRate, monitor_height*0.77/customRate, monitor_width*0.46/customRate, monitor_height*0.14/customRate );
+local emulatorLogo = fe.add_image( "./emulator_logo/"+ "[Emulator]" + ".png" , 	monitor_width*0.51, monitor_height*0.77, monitor_width*0.46, monitor_height*0.14 );
 
 
 emulatorLogo.preserve_aspect_ratio = true;
@@ -447,11 +440,24 @@ function on_signal( sig )
 		case "select":			// 리스트 선택시 발생
 			if ( my_config["playConfirm"] == "Y" )
 			{
-								local optionsYn = ["예", "아니오"];
+				local emulator_default = [""];
+
+				emulator_default.clear();
+
+				function default_callback( tt )
+				{
+					emulator_default = rstrip(tt);
+				};
+
+
+				fe.plugin_command( "bash", "/home/odroid/runcommand/getdefault.sh " + fe.game_info(Info.Emulator), "default_callback" );			
+			
+			
+				local optionsYn = ["바로 실행", "에뮬레이터 선택(" + emulator_default + ")", "취소"];
 
 				//건스타 슈퍼 히어로즈 (한글).state.auto
 			
-				local command = fe.overlay.list_dialog( optionsYn,  "'" +fe.game_info(Info.Title) + "' 을 실행합니까?");
+				local command = fe.overlay.list_dialog( optionsYn,  "'" +fe.game_info(Info.Title) + "' 을 실행합니까?", 0, 2);
 				if( command == 0 )	// 예 일경우
 				{
 					if( saveImage.visible )
@@ -459,6 +465,32 @@ function on_signal( sig )
 						saveStart();
 					}
 					return false;		
+				}
+				else if ( command == 1 ) 
+				{
+					local emulator_selects = [""];
+
+					emulator_selects.clear();
+
+					function selects_callback( tt )
+					{
+						emulator_selects.append(tt);
+					};
+
+
+					fe.plugin_command( "bash", "/home/odroid/runcommand/getselectlists.sh " + fe.game_info(Info.Emulator), "selects_callback" );
+
+					local num_of_selects = emulator_selects.len();
+					emulator_selects.append("취소");	
+					
+					local command_emulator = fe.overlay.list_dialog( emulator_selects,  "'"  + fe.game_info(Info.Title) + "'\n기본:" + emulator_default, 0, num_of_selects);
+					if (command_emulator == num_of_selects)
+					   return true;
+					else {
+						local corename = rstrip(emulator_selects[command_emulator]);
+						fe.plugin_command( "bash", "/home/odroid/runcommand/setdefault.sh " + corename + " " + fe.game_info(Info.Emulator) );
+						return false;
+					}
 				}
 				else
 					return true;
@@ -489,9 +521,7 @@ function on_signal( sig )
 		case "custom4":
 			fe.do_nut("setting_network.nut");
 			return true;
-		case "custom5":
-			fe.do_nut("setting_bt.nut");
-			return true;
+
 		case "back":
 			if( saveImage.visible )
 				saveInit();
@@ -519,17 +549,16 @@ overlayBackground.set_bg_rgb( 1, 1, 1);
 overlayBackground.bg_alpha = 110;
 overlayBackground.visible = false;
 
-local overlayBoxBg = fe.add_text("", monitor_width/10/customRate, monitor_height/10/customRate, (monitor_width - monitor_width/10*2)/customRate, (monitor_height - monitor_height/10*2)/customRate);
+local overlayBoxBg = fe.add_text("", monitor_width/10, monitor_height/10, (monitor_width - monitor_width/10*2), (monitor_height - monitor_height/10*2));
 overlayBoxBg.set_bg_rgb( 1, 1, 1);
 overlayBoxBg.bg_alpha = 200;
 overlayBoxBg.visible = false;
 
 // by this parameters
 // monitor_height
-local overlay_lb = fe.add_listbox( monitor_width/10/customRate, monitor_height/10/customRate, (monitor_width - monitor_width/10*2)/customRate, (monitor_height - monitor_height/10*2)/customRate); 	// Add the listbox
+local overlay_lb = fe.add_listbox( monitor_width/10, monitor_height/10, (monitor_width - monitor_width/10*2), (monitor_height - monitor_height/10*2)); 	// Add the listbox
 overlay_lb.rows = 8;//6; // the listbox will have 6 slots
-//overlay_lb.charsize = 40/customRate;
-overlay_lb.charsize = 0.083 * monitor_height/customRate;
+overlay_lb.charsize = 0.083 * monitor_height;
 overlay_lb.set_rgb( 128, 128, 128 );
 overlay_lb.sel_style = Style.Bold;
 overlay_lb.set_bg_rgb(255,255,255);
@@ -537,10 +566,9 @@ overlay_lb.set_sel_rgb( 255, 255, 255 );
 overlay_lb.set_selbg_rgb( 255,130,0 );
 overlay_lb.visible = false;
 
-local overlayMenuTitle = fe.add_text("[DisplayName]", monitor_width/10/customRate, monitor_height/10/customRate, (monitor_width - monitor_width/10*2)/customRate, (monitor_height/5)/customRate);
+local overlayMenuTitle = fe.add_text("[DisplayName]", monitor_width/10, monitor_height/10, (monitor_width - monitor_width/10*2), (monitor_height*3/10));
 overlayMenuTitle.word_wrap = true;
-//overlayMenuTitle.charsize=32/customRate;
-overlayMenuTitle.charsize=0.066 * monitor_height/customRate;
+overlayMenuTitle.charsize=0.066 * monitor_height;
 //overlayMenuTitle.style = Style.Bold;
 overlayMenuTitle.set_rgb(0,0,0);
 overlayMenuTitle.set_bg_rgb(255,255,255);

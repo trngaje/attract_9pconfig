@@ -1,3 +1,8 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons;Series;Language;Region;Rating
 Dr. Mario 64 (U) [!];Dr. Mario 64 (U) [!];n64;;;;;;;;;;;;;;;;;;
+Fushigi no Dungeon - Fuurai no Shiren 2 (English Translation v1.02);Fushigi no Dungeon - Fuurai no Shiren 2 (English Translation v1.02);n64;;;;;;;;;;;;;;;;;;
+Fushigi no Dungeon - Fuurai no Shiren 2 (J) [!];Fushigi no Dungeon - Fuurai no Shiren 2 (J) [!];n64;;;;;;;;;;;;;;;;;;
 Neon Genesis Evangelion (K)[SMJ];Neon Genesis Evangelion (K)[SMJ];n64;;;;;;;;;;;;;;;;;;
 New Tetris, The (USA);New Tetris, The (USA);n64;;;;;;;;;;;;;;;;;;
+마리오 카트 64 한글1.0v;마리오 카트 64 한글1.0v;n64;;;;;;;;;;;;;;;;;;
+슈퍼 마리오 64 진동팩 대응 버전 (K);슈퍼 마리오 64 진동팩 대응 버전 (K);n64;;;;;;;;;;;;;;;;;;

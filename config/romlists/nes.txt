@@ -1,2 +1,5 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons;Series;Language;Region;Rating
 슈퍼 마리오 브로스1;슈퍼 마리오 브로스1;nes;;;;;;;;;;;;;;;;;;
 악마성 스페셜 - 나는 드라큐라군;악마성 스페셜 - 나는 드라큐라군;nes;;;;;;;;;;;;;;;;;;
+열혈고교 돗지볼부-축구편;열혈고교 돗지볼부-축구편;nes;;;;;;;;;;;;;;;;;;
+트윈비3포코 코코 대마왕 한국어화 v0.9;트윈비3포코 코코 대마왕 한국어화 v0.9;nes;;;;;;;;;;;;;;;;;;

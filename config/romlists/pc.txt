@@ -1,3 +1,13 @@
+#Name;Title;Emulator;CloneOf;Year;Manufacturer;Category;Players;Rotation;Control;Status;DisplayCount;DisplayType;AltRomname;AltTitle;Extra;Buttons;Series;Language;Region;Rating
+03.win95_drivers;03.win95_drivers;pc;;;;;;;;;;;;;;;;;;
 Debut;Debut;pc;;;;;;;;;;;;;;;;;;
 Jazz Jackrabbit CD (1995)(Epic Megagames)(M4);Jazz Jackrabbit CD (1995)(Epic Megagames)(M4);pc;;;;;;;;;;;;;;;;;;
 Jazz Jackrabbit CD (1995)(Epic Megagames)(M4).save;Jazz Jackrabbit CD (1995)(Epic Megagames)(M4).save;pc;;;;;;;;;;;;;;;;;;
+Win95;Win95;pc;;;;;;;;;;;;;;;;;;
+debut;debut;pc;;;;;;;;;;;;;;;;;;
+ne2000;ne2000;pc;;;;;;;;;;;;;;;;;;
+tunnel;tunnel;pc;;;;;;;;;;;;;;;;;;
+win95;win95;pc;;;;;;;;;;;;;;;;;;
+win98;win98;pc;;;;;;;;;;;;;;;;;;
+win98se;win98se;pc;;;;;;;;;;;;;;;;;;
+스타크래프트(starcraft);스타크래프트(starcraft);pc;;;;;;;;;;;;;;;;;;
